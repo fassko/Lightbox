@@ -6,9 +6,13 @@ let package = Package(
     products: [
         .library(name: "Lightbox", targets: ["Lightbox"])
     ],
+    dependencies: [
+      .package(url: "https://github.com/fassko/Imaginary", .branch("master"))
+    ],
     targets: [
         .target(
             name: "Lightbox",
+            dependencies: ["Imaginary"],
             path: "Source"
         )
     ]
